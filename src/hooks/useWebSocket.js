@@ -2,7 +2,8 @@ import { useEffect, useRef, useCallback } from 'react';
 import { Client } from '@stomp/stompjs';
 import SockJS from 'sockjs-client';
 
-const WS_URL = 'http://localhost:8080/ws';
+const WS_URL =
+  process.env.REACT_APP_WS_URL || 'http://localhost:8080/ws';
 
 export function useWebSocket({ onIncident, onAlert }) {
   const clientRef = useRef(null);

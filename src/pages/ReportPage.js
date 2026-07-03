@@ -9,7 +9,7 @@ const CATEGORIES = ['INSECURITY','ROAD_HAZARD','EMERGENCY','OUTAGE','OTHER'];
 const SEVERITIES = ['LOW','MODERATE','HIGH','CRITICAL'];
 const sevColour  = { LOW:'#00D9B8', MODERATE:'#F59E0B', HIGH:'#FF6B00', CRITICAL:'#FF3B30' };
 
-const API = 'http://localhost:8080/api';
+const API = `${process.env.REACT_APP_API_URL}/api`;
 
 export default function ReportPage() {
   const { user } = useAuth();

@@ -2,6 +2,8 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import axios from 'axios';
 import { useWebSocket } from '../hooks/useWebSocket';
 
+const API = `${process.env.REACT_APP_API_URL}/api`;
+
 const IncidentContext = createContext();
 
 export function IncidentProvider({ children }) {
@@ -11,7 +13,7 @@ export function IncidentProvider({ children }) {
 
   // Load existing incidents from REST API on first render
   useEffect(() => {
-    axios.get('http://localhost:8080/api/incidents')
+    axios.get(`${API}/incidents`)
       .then(res => setIncidents(res.data))
       .catch(err => console.error('Failed to load incidents', err))
       .finally(() => setLoading(false));

@@ -10,7 +10,7 @@ import {
   XAxis, YAxis, Tooltip, ResponsiveContainer
 } from 'recharts';
 
-const API = 'http://localhost:8080/api';
+const API = `${process.env.REACT_APP_API_URL}/api`;
 const sevColour = { CRITICAL:'#FF3B30', HIGH:'#FF6B00', MODERATE:'#F59E0B', LOW:'#00D9B8' };
 const catIcon   = { INSECURITY:'🔫', ROAD_HAZARD:'🚧', EMERGENCY:'🚑', OUTAGE:'⚡', OTHER:'📍' };
 
